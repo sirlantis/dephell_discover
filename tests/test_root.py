@@ -101,7 +101,7 @@ def test_packages_module(files, expected_modules, tmp_path):
 
 @pytest.mark.parametrize('files, expected_paths', [
     [('foobar/__init__.py', 'foobar/foo.py', 'foobar/bar.py'), {'foobar'}],
-    [('src/__init__.py', 'src/foo.py', 'src/bar.py'), {'src'}],
+    [('src/__init__.py', 'src/foo.py', 'src/bar.py', 'tasks/__init__.py', 'script.py'), {'src'}],
     # [('src/foo.py', 'src/bar.py'), {'src/'}],
     [('__init__.py', 'foo.py', 'bar.py'), {''}],
     [('src/foobar/__init__.py', 'src/foobar/foo.py', 'src/foobar/bar.py'), {'src/foobar'}],

@@ -46,9 +46,13 @@ class Root:
     def packages(self) -> List[Package]:
         packages = []
 
-        root = self.path / self.name.replace('-', '_')
+        src = self.path / 'src'
+        if not src.exists():
+            src = self.path
+
+        root = src / self.name.replace('-', '_')
         if not root.exists():
-            root = self.path
+            root = src
 
         for path in root.glob('**/__init__.py'):
             if self.include(path=path):
